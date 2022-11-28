@@ -19,8 +19,8 @@
     <NuxtPage />
     <ScrollTop />
     <ContactComp />
-    <FooterComp />
   </div>
+  <FooterComp />
 </template>
 
 <script setup>
@@ -51,7 +51,7 @@ function resizeCheck() {
 <style>
 :root {
   font-family: "Roboto", sans-serif;
-  font-size: clamp(10px, 1.04vw, 16px); 
+  font-size: clamp(10px, 1.04vw, 18px);
   font-weight: 400;
   letter-spacing: 0.02rem;
   line-height: 1.45rem;
@@ -83,9 +83,8 @@ h1 {
 }
 #__nuxt {
   overflow: hidden;
-  max-width: 1550px;
+  max-width: 1732px;
   margin: auto;
-
 }
 
 a {

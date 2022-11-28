@@ -1,12 +1,14 @@
 <template>
   <div class="teamCard">
-    <img
-      class="image"
-      :src="$urlFor(image).size(imageWidth, imageHeight).url()"
-      :alt="name"
-    />
-    <p class="name">{{ name }}</p>
-    <p>{{ jobTitle }}</p>
+    <NuxtLink :to="'/team/' + name">
+      <img
+        class="image"
+        :src="$urlFor(image).size(imageWidth, imageHeight).url()"
+        :alt="name"
+      />
+      <p class="name">{{ name }}</p>
+      <p>{{ jobTitle }}</p>
+    </NuxtLink>
   </div>
 </template>
 
@@ -44,7 +46,7 @@ p {
   margin: 0;
 }
 .name {
-    font-weight: 500;
-    margin-top: 3%;
+  font-weight: 500;
+  margin-top: 3%;
 }
 </style>

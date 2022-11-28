@@ -8,23 +8,38 @@
           v-for="(treatment, index) in treatment.treatmentSectrum"
           :key="index"
         >
-          <NuxtLink :to="'/behandlungen/' + index" @click="open = !open">
+          <NuxtLink
+            :to="'/behandlungen/' + treatment.slug.current"
+            @click="open = !open"
+          >
             <div class="linkTitle">
-                <h2>{{ treatment.treatmentTitle }}</h2><img class="arrow" src="../assets/arrow-open.svg" alt="open/close">
+              <h2>{{ treatment.treatmentTitle }}</h2>
+              <img
+                class="arrow"
+                src="../assets/arrow-open.svg"
+                alt="open/close"
+              />
             </div>
           </NuxtLink>
-          <NuxtPage v-if="route.path == '/behandlungen/' + index" />
+          <NuxtPage
+            v-if="route.path == '/behandlungen/' + treatment.slug.current"
+          />
           <div class="titleLine"></div>
         </div>
       </div>
-      <img class="panorama" :src="$urlFor(treatment.image).size(1200).url()" alt="Gregor Kocher Klinik Panorama">
+      <img
+        class="panorama"
+        :src="$urlFor(treatment.image).size(1200).url()"
+        alt="Gregor Kocher Klinik Panorama"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+window.scrollTo(0, 0);
 
-const route = useRoute()
+const route = useRoute();
 
 const query = groq`*[_type == "treatment"][0]`;
 const { data: treatment } = await useSanityQuery(query);
@@ -38,42 +53,41 @@ const open = ref(false);
   flex-wrap: wrap;
   justify-content: space-between;
   width: 87%;
-  margin: 0 auto 13% 6.5%;
+  margin: 0 6.5% 13% 6.5%;
 }
 
 .arrow {
-    width: 1.8rem;
-    transition: transform 0.4s;
+  width: 1.8rem;
+  transition: transform 0.4s;
 }
 
 .router-link-active .arrow {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .linkTitle {
-    width: 83.7rem;
-    display: inline-flex;
-    justify-content: space-between;
+  width: 83.7rem;
+  display: inline-flex;
+  justify-content: space-between;
 }
 
 .linkTitle h2 {
-    font-size: 1.7rem;
-    line-height: 2rem;
-    font-weight: 500;
-    margin: 2.5% 0 3% 0;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  font-weight: 500;
+  margin: 2.5% 0 3% 0;
 }
 
 .titleLine {
-    width: 100%;
-    height: 0.12rem;
-    min-height: 1.5px;
-    background-color: black;
+  width: 100%;
+  height: 0.12rem;
+  min-height: 1.5px;
+  background-color: black;
 }
 
 .panorama {
-    width: 100%;
-    aspect-ratio: 19.2 / 4.62;
-    object-fit: cover;
+  width: 100%;
+  aspect-ratio: 19.2 / 4.62;
+  object-fit: cover;
 }
-
 </style>

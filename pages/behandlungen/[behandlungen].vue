@@ -2,7 +2,10 @@
   <div>
     <div v-for="(treat, index) in treat.treatmentSectrum" :key="index">
       <Transition name="slide" appear>
-        <div class="content" v-show="route.path == '/behandlungen/' + index">
+        <div
+          class="content"
+          v-show="route.path == '/behandlungen/' + treat.slug.current"
+        >
           <SanityContent :blocks="treat.description" />
         </div>
       </Transition>
@@ -30,10 +33,9 @@ const route = useRoute();
 }
 
 .content {
-    width: 80%;
-    margin: auto;
-    font-size: 1.7rem;
-    line-height: 2.3rem;
+  width: 80%;
+  margin: 0 auto 7% auto;
+  font-size: 1.7rem;
+  line-height: 2.3rem;
 }
-
 </style>

@@ -1,13 +1,15 @@
 <template>
-  <div class="newsCard" v-if="newsPost">
-    <p>{{ newsPost.untertitel }}</p>
-    <div>
-      <div class="date" v-if="newsPost.datum">
-        {{ formatDate(newsPost.datum) }}
+  <NuxtLink :to="'/news/' + newsPost.slug.current">
+    <div class="newsCard" v-if="newsPost">
+      <p>{{ newsPost.untertitel }}</p>
+      <div>
+        <div class="date" v-if="newsPost.datum">
+          {{ formatDate(newsPost.datum) }}
+        </div>
+        <div class="newsLine"></div>
       </div>
-      <div class="newsLine"></div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>
@@ -29,6 +31,11 @@ function formatDate(initialDate) {
   width: 25rem;
   height: 16.3rem;
   margin-top: 12%;
+  transition: color 0.1s;
+}
+
+.newsCard:hover {
+  color: #87bbbc;
 }
 
 .newsLine {

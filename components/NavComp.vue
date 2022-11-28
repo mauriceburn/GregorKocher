@@ -1,5 +1,14 @@
 <template>
-  <div class="sideNav" @mouseover="visible = false" :class="{ collapse: visible }">
+  <div
+    class="sideNav"
+    @mouseover="visible = false"
+    :class="{ collapse: visible }"
+  >
+    <div v-if="visible" class="burger">
+      <hr />
+      <hr />
+      <hr />
+    </div>
     <div class="wrapper">
       <NuxtLink to="/" class="single"> GREGOR KOCHER </NuxtLink>
       <div class="singleLine"></div>
@@ -36,7 +45,6 @@
 <script setup>
 var scrollY = 0;
 var visible = ref(false);
-
 
 function onScroll(e) {
   scrollY = window.scrollY;
@@ -76,6 +84,17 @@ onUnmounted(() => {
   transition: all 0.4s;
 }
 
+hr {
+  border: 0;
+  background: #ffffff;
+  height: 0.15rem;
+  width: 3rem;
+  margin: 0.5rem 0 0.8rem 0;
+}
+
+.burger {
+  margin: 0;
+}
 
 .single {
   color: inherit;
@@ -117,11 +136,20 @@ onUnmounted(() => {
 }
 
 .collapse {
-  width: 4%;
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  background: rgb(4, 89, 119);
+  background: linear-gradient(
+    0deg,
+    rgba(4, 89, 119, 1) 0%,
+    rgba(8, 115, 133, 1) 100%
+  );
 }
 
 .collapse .wrapper {
-  margin-bottom: 0 ;
+  margin-bottom: 0;
+  display: none;
 }
 .collapse .wrapper:last-child {
   margin-bottom: 2.9rem;

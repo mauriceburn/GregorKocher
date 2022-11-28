@@ -11,7 +11,11 @@
 </template>
 
 <script setup>
-const query = groq`*[_type == "news"][0..5] {untertitel, datum}`;
+const props = defineProps({
+  numberOfArticles: ref("0..5"),
+});
+
+const query = groq`*[_type == "news"][${props.numberOfArticles}] {untertitel, datum, slug}`;
 const { data: news, refresh } = useSanityQuery(query);
 </script>
 
@@ -25,11 +29,11 @@ const { data: news, refresh } = useSanityQuery(query);
 }
 
 .mehr {
-    display: block;
-    color: #1A1A1D;
-    font-style: italic;
-    padding: 2%;
-    width: fit-content;
-    margin: auto;
+  display: block;
+  color: #1a1a1d;
+  font-style: italic;
+  padding: 2%;
+  width: fit-content;
+  margin: auto;
 }
 </style>

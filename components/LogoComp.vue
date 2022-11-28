@@ -39,7 +39,7 @@ watch(
 const route = useRoute();
 
 const logoWidth = ref("32%");
-const logoHeight = ref("18.5rem");
+const logoHeight = ref("17.5rem");
 
 const resizeLogo = () => {
   if (props.resizeStatus == true) {
@@ -47,7 +47,7 @@ const resizeLogo = () => {
     logoHeight.value = "40rem";
   } else {
     logoWidth.value = "32%";
-    logoHeight.value = "18.5rem";
+    logoHeight.value = "17.5rem";
   }
 };
 </script>
