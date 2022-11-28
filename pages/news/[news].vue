@@ -22,7 +22,6 @@ onMounted(() => {
   width: 65%;
   margin: auto auto 10% auto;
 }
-
 h2 {
   font-size: 2rem;
   font-weight: 500;
