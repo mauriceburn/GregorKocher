@@ -1,18 +1,20 @@
 <template>
   <div>
     <h1 class="news">News</h1>
+    <div class="h1Line"></div>
     <div class="newsComp">
       <div v-for="(newsPost, index) in news" :key="index">
         <NewsCard :newsPost="newsPost" />
       </div>
     </div>
-    <NuxtLink class="mehr" to="/news">mehr -></NuxtLink>
+    <NuxtLink v-if="showMore" class="mehr" to="/news">mehr -></NuxtLink>
   </div>
 </template>
 
 <script setup>
 const props = defineProps({
   numberOfArticles: ref("0..5"),
+  showMore: ref(true),
 });
 
 const query = groq`*[_type == "news"][${props.numberOfArticles}] {untertitel, datum, slug}`;

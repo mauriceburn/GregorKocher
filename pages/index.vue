@@ -7,7 +7,7 @@
         :src="$urlFor(home.hauptbild).size(1200).url()"
         :alt="home.title"
       />
-      <NewsComp numberOfArticles="0..5" />
+      <NewsComp numberOfArticles="0..5" showMore="true" />
       <GalleryComp />
     </div>
   </div>

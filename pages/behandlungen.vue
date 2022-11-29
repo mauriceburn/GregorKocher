@@ -3,15 +3,13 @@
     <div class="treatments" v-if="treatment">
       <BannerComp :title="treatment.title" :body="treatment.body" />
       <h1>Behandlungsspektrum</h1>
+      <div class="h1Line"></div>
       <div class="section">
         <div
           v-for="(treatment, index) in treatment.treatmentSectrum"
           :key="index"
         >
-          <NuxtLink
-            :to="'/behandlungen/' + treatment.slug.current"
-            @click="open = !open"
-          >
+          <NuxtLink :to="'/behandlungen/' + treatment.slug.current">
             <div class="linkTitle">
               <h2>{{ treatment.treatmentTitle }}</h2>
               <img
@@ -37,14 +35,14 @@
 </template>
 
 <script setup>
-window.scrollTo(0, 0);
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 
 const route = useRoute();
 
 const query = groq`*[_type == "treatment"][0]`;
 const { data: treatment } = await useSanityQuery(query);
-
-const open = ref(false);
 </script>
 
 <style scoped>

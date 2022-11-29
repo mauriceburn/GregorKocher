@@ -90,7 +90,7 @@ const resizeLogo = () => {
   height: 16.3rem;
   background-color: white;
   position: absolute;
-  transform: translateY(-100%);
+  transform: translateY(-99.5%);
 }
 
 .overlay div {

@@ -3,6 +3,7 @@
     <div class="zuweisende" v-if="zuweisende">
       <BannerComp :title="zuweisende.title" :body="zuweisende.introText" />
       <h1>Zuweisende</h1>
+      <div class="h1Line"></div>
       <div class="zuweisendeSection">
         <SanityContent :blocks="zuweisende.body" />
         <img
@@ -46,5 +47,6 @@ h3 {
 .image {
   width: 100%;
   margin-top: 9%;
+  margin-bottom: 5%;
 }
 </style>

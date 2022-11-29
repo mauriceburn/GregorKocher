@@ -23,7 +23,7 @@ const { data: teamSingle, refresh } = useSanityQuery(query);
 onMounted(() => {
   setTimeout(() => {
     document.getElementById("teamSingle").style.transform = "translateX(0)";
-  }, 1);
+  }, 10);
 });
 
 onUnmounted(() => {
@@ -34,13 +34,13 @@ onUnmounted(() => {
 <style scoped>
 #teamSingle {
   background-color: white;
-  width: 90%;
-  height: 80%;
+  width: 60%;
+  height: 100%;
   right: 0;
-  top: 4%;
+  top: 0;
   position: fixed;
   z-index: 1;
-  padding: 5%;
+  padding: 0 5% 5% 5%;
   box-shadow: 0 0 0.7vw 0 rgba(30, 30, 30, 0.75);
   overflow-y: scroll;
   transform: translateX(100%);
@@ -53,12 +53,14 @@ onUnmounted(() => {
   object-fit: cover;
 }
 .close {
-  float: right;
+  position: sticky;
+  top: 0;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
-  margin: 2rem;
+  padding: 2rem 2rem 2rem 0;
   cursor: pointer;
+  background-color: white;
 }
 
 .closeIcon {

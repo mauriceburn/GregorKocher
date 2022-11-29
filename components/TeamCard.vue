@@ -36,10 +36,6 @@ const imageHeight = 800;
   object-fit: cover;
 }
 
-.teamCard:first-child {
-  margin-left: 26%;
-}
-
 p {
   font-size: 1.2rem;
   line-height: 1.3rem;

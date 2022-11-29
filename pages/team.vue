@@ -4,8 +4,10 @@
       <BannerComp :title="team.title" :body="team.body" />
       <NuxtPage />
       <h1>Team</h1>
+      <div class="h1Line"></div>
       <div class="teamSection">
         <TeamCard
+          class="coreTeam"
           @click="fixBody"
           v-for="(teamMember, index) in teamMembers.teamMembers"
           :key="index"
@@ -13,8 +15,12 @@
           :name="teamMember.name"
           :jobTitle="teamMember.jobTitle"
         />
-        <h1>Zusammenarbeit und Stellvertretung</h1>
+      </div>
+      <h1>Zusammenarbeit und Stellvertretung</h1>
+      <div class="h1Line"></div>
+      <div class="teamSection2">
         <TeamCard
+          class="coreTeam"
           v-for="(teamMember, index) in extendedTeam.teamMembers"
           :key="index"
           :image="teamMember.portrait"
@@ -31,13 +37,13 @@ onMounted(() => {
   window.scrollTo(0, 0);
 });
 const query = groq`*[_type == "team"][0]{title, body}`;
-const { data: team } = await useSanityQuery(query);
+const { data: team } = useSanityQuery(query);
 
 const queryTeam = groq`*[_type == "team"][0]{teamMembers[extendedTeam == false]}`;
-const { data: teamMembers } = await useSanityQuery(queryTeam);
+const { data: teamMembers } = useSanityQuery(queryTeam);
 
 const queryExTeam = groq`*[_type == "team"][0]{teamMembers[extendedTeam == true]}`;
-const { data: extendedTeam } = await useSanityQuery(queryExTeam);
+const { data: extendedTeam } = useSanityQuery(queryExTeam);
 
 function fixBody() {
   var scrollPosition = window.scrollY;
@@ -47,7 +53,17 @@ function fixBody() {
 </script>
 
 <style scoped>
+.teamSection .teamCard:first-child {
+  margin-left: 26%;
+}
 .teamSection {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 87%;
+  margin: 0 auto 0 6.5%;
+}
+.teamSection2 {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: space-between;
