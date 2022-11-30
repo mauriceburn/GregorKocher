@@ -1,33 +1,20 @@
 <template>
   <div>
-    <div class="treatments" v-if="treatment">
-      <BannerComp :title="treatment.title" :body="treatment.body" />
+    <div class="treatments" v-if="treatments">
+      <BannerComp :title="treatments.title" :body="treatments.body" />
       <h1>Behandlungsspektrum</h1>
       <div class="h1Line"></div>
       <div class="section">
-        <div
-          v-for="(treatment, index) in treatment.treatmentSectrum"
+        <TreatmentComp
+          @click="isOpen = !isOpen"
+          v-for="(treat, index) in treatments.treatmentSectrum"
           :key="index"
-        >
-          <NuxtLink :to="'/behandlungen/' + treatment.slug.current">
-            <div class="linkTitle">
-              <h2>{{ treatment.treatmentTitle }}</h2>
-              <img
-                class="arrow"
-                src="../assets/arrow-open.svg"
-                alt="open/close"
-              />
-            </div>
-          </NuxtLink>
-          <NuxtPage
-            v-if="route.path == '/behandlungen/' + treatment.slug.current"
-          />
-          <div class="titleLine"></div>
-        </div>
+          :treat="treat"
+        />
       </div>
       <img
         class="panorama"
-        :src="$urlFor(treatment.image).size(1200).url()"
+        :src="$urlFor(treatments.image).size(1200).url()"
         alt="Gregor Kocher Klinik Panorama"
       />
     </div>
@@ -35,14 +22,15 @@
 </template>
 
 <script setup>
+const query = groq`*[_type == "treatment"][0]`;
+const { data: treatments } = await useSanityQuery(query);
 onMounted(() => {
   window.scrollTo(0, 0);
 });
 
 const route = useRoute();
 
-const query = groq`*[_type == "treatment"][0]`;
-const { data: treatment } = await useSanityQuery(query);
+const isOpen = ref(false);
 </script>
 
 <style scoped>
@@ -52,35 +40,6 @@ const { data: treatment } = await useSanityQuery(query);
   justify-content: space-between;
   width: 87%;
   margin: 0 6.5% 13% 6.5%;
-}
-
-.arrow {
-  width: 1.8rem;
-  transition: transform 0.4s;
-}
-
-.router-link-active .arrow {
-  transform: rotate(180deg);
-}
-
-.linkTitle {
-  width: 83.7rem;
-  display: inline-flex;
-  justify-content: space-between;
-}
-
-.linkTitle h2 {
-  font-size: 1.7rem;
-  line-height: 2rem;
-  font-weight: 500;
-  margin: 2.5% 0 3% 0;
-}
-
-.titleLine {
-  width: 100%;
-  height: 0.12rem;
-  min-height: 1.5px;
-  background-color: black;
 }
 
 .panorama {

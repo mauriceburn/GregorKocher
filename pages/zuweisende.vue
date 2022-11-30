@@ -36,6 +36,10 @@ h3 {
 .zuweisendeSection p {
   min-height: 1rem;
 }
+
+.zuweisendeSection a {
+  text-decoration: underline;
+}
 </style>
 
 <style scoped>

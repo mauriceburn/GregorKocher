@@ -34,6 +34,7 @@ onUnmounted(() => {
 <style scoped>
 #teamSingle {
   background-color: white;
+  border-radius: 1rem;
   width: 60%;
   height: 100%;
   right: 0;

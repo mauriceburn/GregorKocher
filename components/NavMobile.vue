@@ -48,10 +48,11 @@ const collapsed = ref(true);
 
 <style scoped>
 .sideNav {
-  position: fixed;
+  position: relative;
+  float: right;
   top: 2vw;
   right: 0;
-  width: 16%;
+  width: 20%;
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.24rem;
@@ -68,7 +69,7 @@ hr {
   border: 0;
   background: black;
   height: 0.15rem;
-  width: 3rem;
+  width: 100%;
   margin: 0.5rem 0 0.8rem 0;
 }
 

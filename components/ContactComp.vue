@@ -19,7 +19,6 @@
     <div class="variable">
       <TransitionGroup name="list">
         <div class="contactInfoContainer" v-show="btn == 1" key="1">
-
           <div class="contactInfo">
             <p class="contactTitle">{{ contact.contactTitle }}</p>
             <div class="address">
@@ -45,7 +44,10 @@
               </p>
             </div>
             <div class="emergency">
-              <SanityContent :blocks="contact.body" :serializers="serializers" />
+              <SanityContent
+                :blocks="contact.body"
+                :serializers="serializers"
+              />
             </div>
           </div>
         </div>
@@ -64,7 +66,11 @@
           </div>
         </div>
         <div class="mapContainer" v-show="btn == 3" key="3">
-          <div v-if="contact.googleMapsLink" class="map" v-html="contact.googleMapsLink"></div>
+          <div
+            v-if="contact.googleMapsLink"
+            class="map"
+            v-html="contact.googleMapsLink"
+          ></div>
         </div>
       </TransitionGroup>
     </div>
@@ -102,7 +108,6 @@ const serializers = {
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-
 }
 .list-leave-active {
   position: relative;
@@ -207,25 +212,27 @@ const serializers = {
 }
 .menu {
   width: fit-content;
-  margin: 40% auto auto auto;
+  margin: 35% auto auto auto;
 }
 
 h2 {
   font-size: 2.7rem;
   letter-spacing: 0.1rem;
   font-weight: 350;
+  margin: 20% 0 10% 0;
+  cursor: pointer;
 }
 
 .line {
   position: relative;
   background: white;
-  height: 0.4rem;
+  height: 0.3rem;
   width: 20%;
 }
 
 .active {
   color: white;
-  margin-bottom: 2.5rem;
+  margin-bottom: 18%;
   white-space: nowrap;
 }
 
@@ -250,5 +257,4 @@ h2 {
   width: 100%;
   transform: translateY(0);
 }
-
 </style>
