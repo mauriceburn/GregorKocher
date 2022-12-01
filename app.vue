@@ -39,7 +39,8 @@
     </Head>
     <NavComp class="desktop" />
     <LogoMobile class="mobile" />
-    <LogoComp class="desktop" :resizeStatus="resizeStatus" />
+    <div class="spacer"></div>
+    <LogoComp :resizeStatus="resizeStatus" />
     <NuxtPage />
     <ScrollTop />
     <ContactComp />
@@ -75,11 +76,15 @@ function resizeCheck() {
 <style>
 :root {
   font-family: "Roboto", sans-serif;
-  font-size: clamp(12px, 1.04vw, 18px);
+  font-size: 1.04vw;
   font-weight: 400;
   letter-spacing: 0.02rem;
   line-height: 1.45rem;
   color: #1a1a1d;
+}
+
+.spacer {
+  height: 0;
 }
 
 body {
@@ -136,6 +141,13 @@ a {
 }
 
 @media screen and (max-width: 900px) {
+  :root {
+    font-size: 12px;
+  }
+  .spacer {
+    height: 20vw;
+  }
+
   .logo {
     width: 60%;
   }
@@ -154,8 +166,8 @@ a {
     margin-bottom: 3%;
   }
   .logoImage {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
   }
   .mainText {
     width: 85% !important;
@@ -178,6 +190,136 @@ a {
   }
   .mobile {
     display: block !important;
+  }
+  .newsComp .newsChildren:nth-last-child(1),
+  .newsComp .newsChildren:nth-last-child(2),
+  .newsComp .newsChildren:nth-last-child(3) {
+    display: none;
+  }
+
+  .gallery {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .column {
+    width: 100% !important;
+  }
+
+  .tallImage {
+    display: none !important;
+  }
+
+  .videoOverlay {
+    margin-bottom: 5%;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    height: fit-content !important;
+  }
+  .menus {
+    width: 100% !important;
+  }
+  .variable {
+    width: 100% !important;
+    height: 135vw !important;
+  }
+  .contactInfo {
+    margin: 5% !important;
+  }
+  .menu {
+    margin: 10% auto 10% auto !important;
+  }
+  .menu h2 {
+    margin: 10% auto 10% auto !important;
+  }
+
+  .phone {
+    margin-left: 12% !important;
+    width: fit-content !important;
+  }
+  .email {
+    width: fit-content !important;
+  }
+  .openingHours {
+    margin: 10% !important;
+    transform: translateY(0) !important;
+    top: 10% !important;
+  }
+  .opening {
+    width: 95% !important;
+  }
+  .impressum {
+    width: 30% !important;
+  }
+  .footer {
+    align-items: center !important;
+    margin: 6% 4% 12% 4% !important;
+  }
+  .footer .logo {
+    width: 30%;
+  }
+  .impressum {
+    font-size: 10px;
+  }
+  .social {
+    width: 30% !important;
+  }
+  .socialIcon {
+    width: 5vw !important;
+  }
+  .scrolltop {
+    width: 12% !important;
+    left: 44% !important;
+    bottom: -1% !important;
+  }
+  .bannerContent {
+    width: 85% !important;
+  }
+  .teamSection .teamCard:first-child {
+    margin-left: 0 !important;
+  }
+  .teamSection .image {
+    width: 100%;
+  }
+  h1 {
+    line-height: 3rem !important;
+    font-size: 2.5rem !important;
+    width: 85%;
+    text-align: center;
+  }
+  .treat h2 {
+    font-size: 1.5rem !important;
+  }
+  .treat {
+    width: 100% !important;
+  }
+  .linkTitle {
+    width: 100% !important;
+  }
+  .bannerContent h3 {
+    font-size: 2.5rem !important;
+    line-height: 2.5rem !important;
+  }
+  .patientsSection {
+    width: 85% !important;
+    margin: 0 auto 0 auto !important;
+  }
+  .patientsSection h3 {
+    line-height: 2.2rem;
+  }
+
+  .content {
+    font-size: 1.3rem !important;
+    width: 100% !important;
+  }
+  #teamSingle {
+    width: 90% !important;
+  }
+  .newsSingle {
+    width: 85% !important;
   }
 }
 </style>

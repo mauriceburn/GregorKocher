@@ -1,13 +1,15 @@
 <template>
   <div id="logoMobile">
-    <NuxtLink to="/"
-      ><img
-        class="logoLong"
-        src="../assets/Logo_kocherThoraxchirurgie_lang.svg"
-        alt="Gregor Kocher Thoraxchirurgie"
-      />
-    </NuxtLink>
-    <NavMobile />
+    <div class="navBar">
+      <NuxtLink to="/">
+        <img
+          class="logoLong"
+          src="../assets/home-thin.svg"
+          alt="Gregor Kocher Thoraxchirurgie"
+        />
+      </NuxtLink>
+      <NavMobile />
+    </div>
   </div>
 </template>
 
@@ -32,17 +34,26 @@ onMounted(() => {
   position: fixed;
   top: 0;
   width: 100%;
-  height: fit-content;
-  display: inline-flex;
-  justify-content: space-between;
+  height: 20vw;
+  align-items: flex-start;
   background-color: white;
   transform: translateY(0);
   transition: transform 0.4s;
   z-index: 1;
 }
+.navBar {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  background: white;
+}
+
+#logoMobile a {
+  height: 0;
+}
 
 .logoLong {
-  height: 15vw;
-  margin: 2.5vw;
+  height: 9vw;
+  margin: 5.5vw 10vw 4.5vw 8vw;
 }
 </style>

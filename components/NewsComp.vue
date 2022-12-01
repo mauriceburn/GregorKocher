@@ -3,7 +3,7 @@
     <h1 class="news">News</h1>
     <div class="h1Line"></div>
     <div class="newsComp">
-      <div v-for="(newsPost, index) in news" :key="index">
+      <div class="newsChildren" v-for="(newsPost, index) in news" :key="index">
         <NewsCard :newsPost="newsPost" />
       </div>
     </div>

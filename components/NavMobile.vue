@@ -1,43 +1,45 @@
 <template>
   <div
-    class="sideNav"
+    class="sideNavMobile"
     @click="collapsed = !collapsed"
-    :class="{ collapse: collapsed }"
+    :class="{ collapseMobile: collapsed }"
   >
-    <div v-if="collapsed" class="burger">
+    <div class="burgerMobile">
       <hr />
       <hr />
       <hr />
     </div>
-    <div class="wrapper">
-      <NuxtLink to="/" class="single"> GREGOR KOCHER </NuxtLink>
-      <div class="singleLine"></div>
-    </div>
-    <div class="wrapper">
-      <NuxtLink to="/team" class="single"> TEAM </NuxtLink>
-      <Transition name="navLine" appear>
+    <div class="navLinks" :class="{ collapse: collapsed }">
+      <div class="wrapper">
+        <NuxtLink to="/" class="single"> GREGOR KOCHER </NuxtLink>
         <div class="singleLine"></div>
-      </Transition>
-    </div>
-    <div class="wrapper">
-      <NuxtLink to="/behandlungen" class="single"> BEHANDLUNGEN </NuxtLink>
-      <div class="singleLine"></div>
-    </div>
-    <div class="wrapper">
-      <NuxtLink to="patientinnen" class="single">
-        PATIENTINNEN<br />& PATIENTEN
-      </NuxtLink>
-      <div class="singleLine"></div>
-    </div>
-    <div class="wrapper">
-      <NuxtLink to="zuweisende" class="single"> ZUWEISENDE </NuxtLink>
-      <div class="singleLine"></div>
-    </div>
-    <div class="wrapper">
-      <div class="single">
-        <a href="#contact">KONTAKT</a>
       </div>
-      <div class="singleLine"></div>
+      <div class="wrapper">
+        <NuxtLink to="/team" class="single"> TEAM </NuxtLink>
+        <Transition name="navLine" appear>
+          <div class="singleLine"></div>
+        </Transition>
+      </div>
+      <div class="wrapper">
+        <NuxtLink to="/behandlungen" class="single"> BEHANDLUNGEN </NuxtLink>
+        <div class="singleLine"></div>
+      </div>
+      <div class="wrapper">
+        <NuxtLink to="patientinnen" class="single">
+          PATIENTINNEN<br />& PATIENTEN
+        </NuxtLink>
+        <div class="singleLine"></div>
+      </div>
+      <div class="wrapper">
+        <NuxtLink to="zuweisende" class="single"> ZUWEISENDE </NuxtLink>
+        <div class="singleLine"></div>
+      </div>
+      <div class="wrapper">
+        <div class="single">
+          <a href="#contact">KONTAKT</a>
+        </div>
+        <div class="singleLine"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,20 +49,17 @@ const collapsed = ref(true);
 </script>
 
 <style scoped>
-.sideNav {
+.sideNavMobile {
   position: relative;
   float: right;
-  top: 2vw;
-  right: 0;
-  width: 20%;
-  font-size: 1.2rem;
+  width: 100%;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
   font-weight: 400;
-  letter-spacing: 0.24rem;
+  letter-spacing: 0.3rem;
   color: #8c8c90;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.95);
-  padding-left: 1.5%;
-  padding-top: 3%;
   z-index: 3;
   transition: all 0.4s;
 }
@@ -68,13 +67,32 @@ const collapsed = ref(true);
 hr {
   border: 0;
   background: black;
-  height: 0.15rem;
+  height: 1px;
   width: 100%;
-  margin: 0.5rem 0 0.8rem 0;
+  margin: 0;
 }
 
-.burger {
-  margin: 0;
+.burgerMobile {
+  display: flex;
+  float: right;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 10vw;
+  height: 7vw !important;
+  margin: 6.5vw 6.5vw 6vw 5vw;
+  background: white;
+  transform: rotate(-90deg);
+  transition: transform 0.4s;
+}
+
+.navLinks {
+  height: 100vw;
+  transition: height 0.3s;
+}
+
+.collapseMobile .navLinks {
+  margin-top: 20vw;
+  height: 0;
 }
 
 .single {
@@ -112,22 +130,23 @@ hr {
 .wrapper {
   display: inline-flex;
   width: 100%;
-  margin-bottom: 2.9vw;
+  margin-bottom: 5vw !important;
   transition: all 0.4s;
 }
 
-.collapse {
-  width: 15%;
-  height: fit-content;
-  padding: 1vw;
-  background: white;
+.wrapper:first-child {
+  margin-top: 8vw;
 }
 
-.collapse .wrapper {
+.collapseMobile .burgerMobile {
+  transform: rotate(0);
+}
+
+.collapseMobile .wrapper {
   margin-bottom: 0;
   display: none;
 }
-.collapse .wrapper:last-child {
+.collapseMobile .wrapper:last-child {
   margin-bottom: 2.9vw;
 }
 </style>

@@ -18,7 +18,7 @@
 const router = useRouter();
 const route = useRoute();
 const query = groq`*[_type == "team"][0] {teamMembers [name match "${route.params.team}"][0]}`;
-const { data: teamSingle, refresh } = useSanityQuery(query);
+const { data: teamSingle, refresh } = await useSanityQuery(query);
 
 onMounted(() => {
   setTimeout(() => {
