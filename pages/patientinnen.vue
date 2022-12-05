@@ -5,7 +5,9 @@
       <h1>Patientinnen und Patienten</h1>
       <div class="h1Line"></div>
       <div class="patientsSection">
-        <SanityContent :blocks="patients.body" />
+        <div class="text">
+          <SanityContent :blocks="patients.body" />
+        </div>
         <img
           class="image"
           :src="$urlFor(patients.image).width(1200).url()"

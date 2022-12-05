@@ -87,7 +87,7 @@ const resizeLogo = () => {
 
 .overlay {
   width: 24.7rem;
-  height: 16.3rem;
+  height: 15.3rem;
   background-color: white;
   position: absolute;
   transform: translateY(-99.5%);
@@ -97,9 +97,9 @@ const resizeLogo = () => {
   margin: 15%;
   font-weight: 100;
   line-height: 38%;
-  font-size: 4.75rem;
-  letter-spacing: 0.4rem;
-  transform: translateX(-61%);
+  font-size: 3.8rem;
+  letter-spacing: 0.3rem;
+  transform: translateX(-22%);
   border: none;
 }
 </style>

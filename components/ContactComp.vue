@@ -53,6 +53,7 @@
         </div>
         <div class="openingHoursContainer" v-show="btn == 2" key="2">
           <div class="openingHours">
+            <p class="openingHoursTitle">Öffnungszeiten Praxis</p>
             <div
               class="opening"
               v-for="(opening, index) in contact.openingHours"
@@ -190,6 +191,10 @@ const serializers = {
   height: 43.3rem;
 }
 
+.openingHoursTitle {
+  font-size: 1.4rem;
+}
+
 .openingHours {
   position: absolute;
   top: 50%;
@@ -199,12 +204,14 @@ const serializers = {
 
 .opening {
   display: inline-flex;
-  width: 80%;
+  width: 90%;
   justify-content: space-between;
   margin-top: 2.1rem;
   font-size: 1.1rem;
 }
-
+.hours {
+  width: 70%;
+}
 .menus {
   background-color: #006780;
   color: #66a4b3;

@@ -11,17 +11,7 @@
     </div>
     <div class="navLinks" :class="{ collapse: collapsed }">
       <div class="wrapper">
-        <NuxtLink to="/" class="single"> GREGOR KOCHER </NuxtLink>
-        <div class="singleLine"></div>
-      </div>
-      <div class="wrapper">
-        <NuxtLink to="/team" class="single"> TEAM </NuxtLink>
-        <Transition name="navLine" appear>
-          <div class="singleLine"></div>
-        </Transition>
-      </div>
-      <div class="wrapper">
-        <NuxtLink to="/behandlungen" class="single"> BEHANDLUNGEN </NuxtLink>
+        <NuxtLink to="/" class="single"> HOME </NuxtLink>
         <div class="singleLine"></div>
       </div>
       <div class="wrapper">
@@ -31,8 +21,18 @@
         <div class="singleLine"></div>
       </div>
       <div class="wrapper">
+        <NuxtLink to="/behandlungen" class="single"> BEHANDLUNGEN </NuxtLink>
+        <div class="singleLine"></div>
+      </div>
+      <div class="wrapper">
         <NuxtLink to="zuweisende" class="single"> ZUWEISENDE </NuxtLink>
         <div class="singleLine"></div>
+      </div>
+      <div class="wrapper">
+        <NuxtLink to="/team" class="single"> TEAM </NuxtLink>
+        <Transition name="navLine" appear>
+          <div class="singleLine"></div>
+        </Transition>
       </div>
       <div class="wrapper">
         <div class="single">

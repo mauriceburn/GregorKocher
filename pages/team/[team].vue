@@ -3,7 +3,7 @@
     <div class="close" @click="router.back()">
       <img class="closeIcon" src="~/assets/close.svg" alt="close" /> schliessen
     </div>
-    <div v-if="teamSingle">
+    <div class="teamSingleOpen" v-if="teamSingle">
       <img
         class="image"
         :src="$urlFor(teamSingle.teamMembers.portrait).width(1200).url()"
@@ -30,6 +30,11 @@ onUnmounted(() => {
   document.body.style.position = "";
 });
 </script>
+<style>
+.teamSingleOpen a {
+  text-decoration: underline;
+}
+</style>
 
 <style scoped>
 #teamSingle {

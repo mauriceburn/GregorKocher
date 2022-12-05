@@ -28,6 +28,9 @@
           :jobTitle="teamMember.jobTitle"
         />
       </div>
+      <div class="descriptionTeam">
+        <SanityContent :blocks="team.description" />
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +39,7 @@
 onMounted(() => {
   window.scrollTo(0, 0);
 });
-const query = groq`*[_type == "team"][0]{title, body}`;
+const query = groq`*[_type == "team"][0]{title, body, description}`;
 const { data: team } = useSanityQuery(query);
 
 const queryTeam = groq`*[_type == "team"][0]{teamMembers[extendedTeam == false]}`;
@@ -51,7 +54,11 @@ function fixBody() {
   document.body.style.top = `-${scrollPosition}px`;
 }
 </script>
-
+<style>
+.descriptionTeam a {
+  text-decoration: underline;
+}
+</style>
 <style scoped>
 .teamSection .teamCard:first-child {
   margin-left: 26%;
@@ -69,5 +76,12 @@ function fixBody() {
   justify-content: space-between;
   width: 87%;
   margin: 0 auto 0 6.5%;
+}
+
+.descriptionTeam {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  margin: 0;
 }
 </style>

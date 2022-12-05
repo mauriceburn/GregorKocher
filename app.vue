@@ -91,6 +91,10 @@ body {
   margin: 0;
 }
 
+p {
+  white-space: pre-line;
+}
+
 html::-webkit-scrollbar {
   display: none;
 }
