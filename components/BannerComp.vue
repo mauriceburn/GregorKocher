@@ -2,12 +2,18 @@
   <div class="banner">
     <div class="bannerContent">
       <h3>{{ title }}</h3>
-      <div><SanityContent :blocks="body" /></div>
+      <div><SanityContent :blocks="body" :serializers="serializers" /></div>
     </div>
   </div>
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
 const props = defineProps({
   title: {},
   body: {},
@@ -29,8 +35,8 @@ const props = defineProps({
 }
 
 .bannerContent {
-    width: 63%;
-    margin: auto auto 7.5% auto;
+  width: 63%;
+  margin: auto auto 7.5% auto;
 }
 
 h3 {

@@ -6,7 +6,7 @@
       <div class="h1Line"></div>
       <div class="patientsSection">
         <div class="text">
-          <SanityContent :blocks="patients.body" />
+          <SanityContent :blocks="patients.body" :serializers="serializers" />
         </div>
         <img
           class="image"
@@ -19,6 +19,12 @@
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
 const query = groq`*[_type == "patients"][0]{title, introText, body, image}`;
 const { data: patients } = await useSanityQuery(query);
 

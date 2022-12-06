@@ -9,12 +9,22 @@
         :src="$urlFor(teamSingle.teamMembers.portrait).width(1200).url()"
         :alt="'portrait ' + teamSingle.teamMembers.name"
       />
-      <SanityContent :blocks="teamSingle.teamMembers.description" />
+      <SanityContent
+        :blocks="teamSingle.teamMembers.description"
+        :serializers="serializers"
+      />
     </div>
   </div>
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
+
 const router = useRouter();
 const route = useRoute();
 const query = groq`*[_type == "team"][0] {teamMembers [name match "${route.params.team}"][0]}`;

@@ -5,7 +5,7 @@
       <h1>Zuweisende</h1>
       <div class="h1Line"></div>
       <div class="zuweisendeSection">
-        <SanityContent :blocks="zuweisende.body" />
+        <SanityContent :blocks="zuweisende.body" :serializers="serializers" />
         <img
           class="image"
           :src="$urlFor(zuweisende.image).width(1200).url()"
@@ -17,6 +17,13 @@
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
+
 const query = groq`*[_type == "zuweisende"][0]{title, introText, body, image}`;
 const { data: zuweisende } = await useSanityQuery(query);
 

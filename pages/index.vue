@@ -1,7 +1,9 @@
 <template>
   <div>
     <div v-if="home">
-      <div class="mainText"><SanityContent :blocks="home.body" /></div>
+      <div class="mainText">
+        <SanityContent :blocks="home.body" :serializers="serializers" />
+      </div>
       <img
         class="mainImage"
         :src="$urlFor(home.hauptbild).size(1200).url()"
@@ -14,6 +16,12 @@
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
 const query = groq`*[_type == "home"][0]`;
 const { data: home, refresh } = useSanityQuery(query);
 

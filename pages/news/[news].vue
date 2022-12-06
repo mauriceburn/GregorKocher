@@ -2,12 +2,19 @@
   <div>
     <div class="newsSingle" v-if="news">
       <h2>{{ news.title }}</h2>
-      <SanityContent :blocks="news.body" />
+      <SanityContent :blocks="news.body" :serializers="serializers" />
     </div>
   </div>
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
+
 const route = useRoute();
 
 const query = groq`*[_type == "news" && slug.current == "${route.params.news}"][0]`;

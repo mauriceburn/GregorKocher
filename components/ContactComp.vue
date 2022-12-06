@@ -122,23 +122,19 @@ const serializers = {
   height: 43.3rem;
   margin-top: 5%;
 }
-
-.contactInfoContainer {
-  position: relative;
-}
 .contactInfo {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin: 5% 23% 8% 13%;
+  margin: 5% 15% 8% 13%;
 }
 
 .contactTitle {
   font-size: 1.4rem;
   line-height: 1.8rem;
   width: 90%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 .address {

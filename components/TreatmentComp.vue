@@ -10,13 +10,19 @@
       />
     </div>
     <div class="content">
-      <SanityContent :blocks="treat.description" />
+      <SanityContent :blocks="treat.description" :serializers="serializers" />
     </div>
     <div class="titleLine"></div>
   </div>
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
 const props = defineProps({
   treat: null,
 });

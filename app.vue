@@ -120,7 +120,7 @@ h1 {
 }
 #__nuxt {
   overflow: hidden;
-  max-width: 1732px;
+  max-width: 1920px;
   margin: auto;
 }
 
@@ -142,6 +142,11 @@ a {
 
 .mobile {
   display: none !important;
+}
+@media screen and (min-width: 1920px) {
+  :root {
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 900px) {

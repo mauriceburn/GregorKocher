@@ -29,13 +29,20 @@
         />
       </div>
       <div class="descriptionTeam">
-        <SanityContent :blocks="team.description" />
+        <SanityContent :blocks="team.description" :serializers="serializers" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import SanityLink from "~/components/SanityLink.vue";
+const serializers = {
+  marks: {
+    link: SanityLink,
+  },
+};
+
 onMounted(() => {
   window.scrollTo(0, 0);
 });
@@ -82,6 +89,6 @@ function fixBody() {
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.3rem;
-  margin: 0;
+  margin: -5% 0 0 0;
 }
 </style>
