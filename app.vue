@@ -25,12 +25,6 @@
       <Meta name="msapplication-TileColor" content="#da532c" />
       <Meta name="theme-color" content="#ffffff" />
 
-      <Link rel="preconnect" href="https://fonts.googleapis.com" />
-      <Link rel="preconnect" href="https://fonts.gstatic.com" />
-      <Link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
-        rel="stylesheet"
-      />
       <Title>Gregor Kocher Thoraxchirurgie</Title>
       <Meta
         name="description"
@@ -74,8 +68,24 @@ function resizeCheck() {
 </script>
 
 <style>
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
 :root {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   font-size: 1.04vw;
   font-weight: 400;
   letter-spacing: 0.02rem;
@@ -109,7 +119,7 @@ h1 {
   margin: auto;
   width: fit-content;
   font-size: 3rem;
-  font-weight: 450;
+  font-weight: 500;
   padding-bottom: 2.6rem;
 }
 .h1Line {
@@ -165,8 +175,8 @@ a {
     height: 16.8vw;
   }
   .overlay div {
-    font-size: 4.75vw !important;
-    letter-spacing: 0.45vw;
+    font-size: 3.7vw !important;
+    letter-spacing: 0.35vw;
   }
   .logoText {
     width: 100%;
@@ -200,11 +210,11 @@ a {
   .mobile {
     display: block !important;
   }
-  .newsComp .newsChildren:nth-last-child(1),
+  /* .newsComp .newsChildren:nth-last-child(1),
   .newsComp .newsChildren:nth-last-child(2),
   .newsComp .newsChildren:nth-last-child(3) {
     display: none;
-  }
+  } */
 
   .gallery {
     width: 100% !important;
@@ -233,7 +243,7 @@ a {
   }
   .variable {
     width: 100% !important;
-    height: 135vw !important;
+    height: 160vw !important;
   }
   .contactInfo {
     margin: 5% !important;
@@ -246,7 +256,7 @@ a {
   }
 
   .phone {
-    margin-left: 12% !important;
+    margin-left: 8.5% !important;
     width: fit-content !important;
   }
   .email {

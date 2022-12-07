@@ -95,7 +95,7 @@ const resizeLogo = () => {
 
 .overlay div {
   margin: 15%;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 38%;
   font-size: 3.8rem;
   letter-spacing: 0.3rem;

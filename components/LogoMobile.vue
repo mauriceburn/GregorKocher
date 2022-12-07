@@ -1,6 +1,6 @@
 <template>
   <div id="logoMobile">
-    <div class="navBar">
+    <div id="navBar">
       <NuxtLink to="/">
         <img
           class="logoLong"
@@ -18,11 +18,15 @@ onMounted(() => {
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
+    if (prevScrollpos > currentScrollPos || currentScrollPos <= 0) {
       document.getElementById("logoMobile").style.transform = "translateY(0)";
+      document.getElementById("navBar").style.transform = "translateY(0)";
     } else {
-      document.getElementById("logoMobile").style.transform =
-        "translateY(-100%)";
+      setTimeout(() => {
+        document.getElementById("logoMobile").style.transform =
+          "translateY(-100%)";
+        document.getElementById("navBar").style.transform = "translateY(-100%)";
+      }, 100);
     }
     prevScrollpos = currentScrollPos;
   };
@@ -41,7 +45,7 @@ onMounted(() => {
   transition: transform 0.4s;
   z-index: 1;
 }
-.navBar {
+#navBar {
   display: inline-flex;
   justify-content: space-between;
   width: 100%;

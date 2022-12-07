@@ -221,7 +221,7 @@ const serializers = {
 h2 {
   font-size: 2.7rem;
   letter-spacing: 0.1rem;
-  font-weight: 350;
+  font-weight: 300;
   margin: 20% 0 10% 0;
   cursor: pointer;
 }
