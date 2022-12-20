@@ -38,8 +38,8 @@
     <NuxtPage />
     <ScrollTop />
     <ContactComp />
+    <FooterComp />
   </div>
-  <FooterComp />
 </template>
 
 <script setup>

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <a :href="props.href" target="blank_" rel="nofollow noopener"><slot /></a>
-  </div>
+  <a :href="props.href" target="blank_" rel="nofollow noopener"><slot /></a>
 </template>
 
 <script setup>

@@ -1,20 +1,20 @@
 <template>
   <div class="footer">
-    <div class="impressum">Impressum | Datenschutz | ©{{ year }}</div>
+    <div class="imp">
+      <NuxtLink to="/impressum">Impressum </NuxtLink> |
+      <NuxtLink to="/datenschutz">Datenschutz </NuxtLink>
+      | ©{{ year }}
+    </div>
     <img
       class="logo"
       src="../assets/Logo_kocherThoraxchirurgie_lang.svg"
       alt="Gregor Kocher Thoraxchirurgie"
     />
     <div class="social">
-      <img
-        class="socialIcon"
-        src="../assets/square-facebook.svg"
-        alt="facebook"
-      />
-      <img class="socialIcon" src="../assets/instagram.svg" alt="instagram" />
-      <img class="socialIcon" src="../assets/twitter.svg" alt="twitter" />
-      <img class="socialIcon" src="../assets/mail-social.svg" alt="eMail" />
+      <img class="socialIcon" src="../assets/linkedin.svg" alt="linkedin" />
+      <a href="mailto:info@kocher-thoraxchirurgie.ch">
+        <img class="socialIcon" src="../assets/mail-social.svg" alt="eMail" />
+      </a>
     </div>
   </div>
 </template>
@@ -40,13 +40,15 @@ const year = new Date().getFullYear();
   width: 1vw;
 }
 
-.impressum {
+.imp {
   width: 18%;
 }
 
 .social {
-  width: 18%;
+  width: 8%;
+  margin-left: 10%;
   display: inline-flex;
   justify-content: space-around;
+  align-items: baseline;
 }
 </style>

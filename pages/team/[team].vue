@@ -33,7 +33,7 @@ const { data: teamSingle, refresh } = await useSanityQuery(query);
 onMounted(() => {
   setTimeout(() => {
     document.getElementById("teamSingle").style.transform = "translateX(0)";
-  }, 10);
+  }, 1);
 });
 
 onUnmounted(() => {

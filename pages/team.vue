@@ -7,6 +7,7 @@
       <div class="h1Line"></div>
       <div class="teamSection">
         <TeamCard
+          coreTeam="true"
           class="coreTeam"
           @click="fixBody"
           v-for="(teamMember, index) in teamMembers.teamMembers"
@@ -46,6 +47,7 @@ const serializers = {
 onMounted(() => {
   window.scrollTo(0, 0);
 });
+
 const query = groq`*[_type == "team"][0]{title, body, description}`;
 const { data: team } = useSanityQuery(query);
 
@@ -56,7 +58,7 @@ const queryExTeam = groq`*[_type == "team"][0]{teamMembers[extendedTeam == true]
 const { data: extendedTeam } = useSanityQuery(queryExTeam);
 
 function fixBody() {
-  var scrollPosition = window.scrollY;
+  const scrollPosition = window.scrollY;
   document.body.style.position = "fixed";
   document.body.style.top = `-${scrollPosition}px`;
 }
