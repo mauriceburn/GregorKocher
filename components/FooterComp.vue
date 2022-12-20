@@ -11,7 +11,11 @@
       alt="Gregor Kocher Thoraxchirurgie"
     />
     <div class="social">
-      <img class="socialIcon" src="../assets/linkedin.svg" alt="linkedin" />
+      <a
+        href="https://www.linkedin.com/in/prof-gregor-j-kocher-md-mba-ihm-b00a017a/"
+        target="_blank"
+        ><img class="socialIcon" src="../assets/linkedin.svg" alt="linkedin"
+      /></a>
       <a href="mailto:info@kocher-thoraxchirurgie.ch">
         <img class="socialIcon" src="../assets/mail-social.svg" alt="eMail" />
       </a>
