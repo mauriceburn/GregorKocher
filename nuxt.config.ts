@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   sanity: {
     projectId: "1lv1ttz7",
   },
+  robots: {
+    rules: {
+      UserAgent: "*",
+      Allow: "/",
+    },
+  },
   sitemap: {
     hostname: "https://kocher-thoraxchirurgie.ch",
   },
