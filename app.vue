@@ -65,6 +65,12 @@ function resizeCheck() {
     resizeStatus.value = false;
   }
 }
+
+useHead({
+  htmlAttrs: {
+    lang: "de-CH",
+  },
+});
 </script>
 
 <style>

@@ -8,7 +8,8 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.12"
+    "nuxt": "3.0.0-rc.12",
+    "sitemap": "^7.1.1"
   },
   "dependencies": {
     "@nuxtjs/robots": "^3.0.0",
