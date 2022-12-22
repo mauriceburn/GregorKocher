@@ -24,7 +24,7 @@
       <Link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
       <Meta name="msapplication-TileColor" content="#da532c" />
       <Meta name="theme-color" content="#ffffff" />
-
+      <Meta name="robots" content="all" />
       <Title>Gregor Kocher Thoraxchirurgie</Title>
       <Meta
         name="description"

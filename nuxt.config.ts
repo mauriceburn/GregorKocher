@@ -5,6 +5,6 @@ export default defineNuxtConfig({
     projectId: "1lv1ttz7",
   },
   sitemap: {
-    hostname: "https://gregorkocher.stormkit.dev",
+    hostname: "https://kocher-thoraxchirurgie.ch",
   },
 });
