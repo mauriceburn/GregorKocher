@@ -1,6 +1,10 @@
 <template>
   <div>
     <Head>
+      <Meta
+        name="google-site-verification"
+        content="msj6YnbFdoDKi1T_nlOzvy5q4fJGm7QzteG5n5xL_BA"
+      />
       <Link rel="icon" type="image/x-icon" href="/favicon.svg" />
 
       <Link
