@@ -237,6 +237,7 @@ a {
   .videoOverlay {
     aspect-ratio: 16/9 !important;
   }
+  
 .videoImage {
   height: 56.2vw!important;
 }
