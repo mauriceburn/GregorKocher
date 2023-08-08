@@ -220,11 +220,6 @@ a {
   .mobile {
     display: block !important;
   }
-  /* .newsComp .newsChildren:nth-last-child(1),
-  .newsComp .newsChildren:nth-last-child(2),
-  .newsComp .newsChildren:nth-last-child(3) {
-    display: none;
-  } */
 
   .gallery {
     width: 100% !important;
@@ -240,9 +235,14 @@ a {
   }
 
   .videoOverlay {
-    margin-bottom: 5%;
+    aspect-ratio: 16/9 !important;
   }
-
+.videoImage {
+  height: 56.2vw!important;
+}
+.video {
+  left: 0!important;
+}
   .contact {
     display: flex;
     flex-direction: column;
