@@ -9,7 +9,13 @@
 
 <script setup>
 import SanityLink from "~/components/SanityLink.vue";
+import ImageSerializer from "~~/components/ImageSerializer.vue";
+import VideoSerializer from "~~/components/VideoSerializer.vue";
 const serializers = {
+  types: {
+    propImage: ImageSerializer,
+    video: VideoSerializer,
+  },
   marks: {
     link: SanityLink,
   },
@@ -22,6 +28,8 @@ const { data: news, refresh } = useSanityQuery(query);
 onMounted(() => {
   window.scrollTo(0, 0);
 });
+
+
 </script>
 
 <style scoped>
