@@ -4,11 +4,7 @@
       <div class="mainText">
         <SanityContent :blocks="home.body" :serializers="serializers" />
       </div>
-      <img
-        class="mainImage"
-        :src="$urlFor(home.hauptbild).size(1200).url()"
-        :alt="home.title"
-      />
+      <img class="mainImage" :src="$urlFor(home.hauptbild).size(1200).url()" :alt="home.title" />
       <NewsComp numberOfArticles="0..5" showMore="true" />
       <GalleryComp />
     </div>

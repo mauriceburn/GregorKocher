@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1 class="news">News</h1>
+    <NuxtLink to="/news">
+      <h1 class="news">News</h1>
+    </NuxtLink>
     <div class="h1Line"></div>
     <div class="newsComp">
       <div class="newsChildren" v-for="(newsPost, index) in news" :key="index">
@@ -17,7 +19,7 @@ const props = defineProps({
   showMore: ref(true),
 });
 
-const query = groq`*[_type == "news"][${props.numberOfArticles}] {untertitel, datum, slug}`;
+const query = groq`*[_type == "news"] {untertitel, datum, slug} | order(_createdAt desc)[${props.numberOfArticles}]`;
 const { data: news, refresh } = useSanityQuery(query);
 </script>
 
